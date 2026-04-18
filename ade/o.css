@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle, #0a0a0a, #000);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* background bintang */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.imgur.com/8Qf6hXG.png");
+  opacity: 0.2;
+}
+
+.container {
+  position: relative;
+  width: 650px;
+  height: 650px;
+}
+
+/* bayangan love */
+.container::after {
+  content: "❤";
+  position: absolute;
+  font-size: 520px;
+  color: rgba(255, 0, 100, 0.06);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* glow tengah */
+.container::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,0,120,0.15), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/* FOTO */
+.img {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 100, 180, 0.8);
+  animation: float 4s infinite ease-in-out;
+  transition: 0.3s;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* hover */
+.img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 30px hotpink;
+}
+
+/* animasi */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
